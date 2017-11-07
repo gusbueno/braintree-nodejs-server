@@ -2,6 +2,8 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import * as braintree from 'braintree';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
@@ -9,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use(cors()); // avoid Access-Control-Allow-Origin problem
 
 const gateway = braintree.connect({
-  accessToken: 'YOUR_AWESOME_ACCESS_TOKEN' // for production or sandbox
+  accessToken: process.env.ACCESS_TOKEN_SANDBOX // for production or sandbox
 });
 
 /* methods */

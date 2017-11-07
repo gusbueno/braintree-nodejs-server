@@ -32,24 +32,10 @@ function checkout(req: any, res: any):void {
     merchantAccountId: "EUR",
     paymentMethodNonce,
     orderId: "Mapped to PayPal Invoice Number",
-    descriptor: {
-      name: "Descriptor displayed in customer CC statements. 22 char max"
-    },
-    shipping: {
-      firstName: "Jen",
-      lastName: "Smith",
-      company: "Braintree",
-      streetAddress: "1 E 1st St",
-      extendedAddress: "5th Floor",
-      locality: "Bartlett",
-      region: "IL",
-      postalCode: "08080",
-      countryCodeAlpha2: "ES"
-    },
     options: {
       paypal: {
         customField: "PayPal custom field",
-        description: "Description for PayPal email receipt"
+        description: "Description for PayPal email receipt",
       },
       submitForSettlement: true
     }

@@ -3,6 +3,7 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import * as braintree from 'braintree';
 import * as dotenv from 'dotenv';
+import * as uuidv1 from 'uuid/v1';
 dotenv.config();
 
 const app = express();
@@ -31,7 +32,7 @@ function checkout(req: any, res: any):void {
     amount,
     merchantAccountId: "EUR",
     paymentMethodNonce,
-    orderId: "Mapped to PayPal Invoice Number",
+    orderId: uuidv1(),
     options: {
       paypal: {
         customField: "PayPal custom field",

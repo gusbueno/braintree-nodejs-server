@@ -46,7 +46,7 @@ function checkout(req: any, res: any):void {
     if (err) {
       res.send({ error: err, saleRequest });
     } else if (result.success) {
-      res.send({ success: true, message: `Success! Transaction ID: ${result.transaction.id}`});
+      res.send({ success: true, message: `Success! Transaction ID: ${result.transaction.id}`, result });
     } else {
       res.send({ error: result.message, saleRequest, result });
     }

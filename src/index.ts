@@ -27,6 +27,7 @@ function clientToken(req: any, res: any):void {
 function checkout(req: any, res: any):void {
   const paymentMethodNonce = req.body.nonce;
   const amount = parseFloat(req.body.amount);
+  console.log(req.body);
 
   // Use payment method nonce here
   const saleRequest = {
